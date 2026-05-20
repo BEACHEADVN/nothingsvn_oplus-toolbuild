@@ -45,9 +45,7 @@ done
 echo "[INFO] - Gathering Devices Infomations"
 source $work_dir/bin/ddevice/fetchINFO.sh
 bash $work_dir/bin/ddevice/modifyINFO.sh
-
-echo "[INFO] - ROM Version: $ROMVERSION"
-echo "[INFO] - Android Version: $ANDROID_VER"
+main
 
 rm -rf config
 if [ -f $work_dir/${baserom}.zip ]; then
