@@ -44,8 +44,8 @@ jobs:
 
       - name: Start Notify
         run: |
-          pip install requests
-          python notify.py start "${{ github.repository }}" "${{ inputs.input_url }}" "oplus" "${{ inputs.builder_name }}" "${{ inputs.builder_id }}"
+          #pip install requests
+          #python notify.py start "${{ github.repository }}" "${{ inputs.input_url }}" "oplus" "${{ inputs.builder_name }}" "${{ inputs.builder_id }}"
 
       - name: Set up Time
         run: |
