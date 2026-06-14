@@ -74,7 +74,7 @@ jobs:
 
       - name: Pack ROM...
         run: |
-          python notify.py pack "${{ github.repository }}" "${{ inputs.input_url }}" "oplus" "${{ inputs.builder_name }}" "${{ inputs.builder_id }}"
+          #python notify.py pack "${{ github.repository }}" "${{ inputs.input_url }}" "oplus" "${{ inputs.builder_name }}" "${{ inputs.builder_id }}"
           sudo bash packROM.sh n
 
       - name: Setup Rclone...
