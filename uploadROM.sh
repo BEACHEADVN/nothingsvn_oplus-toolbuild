@@ -7,7 +7,7 @@ BASE_BUILD_ID=$(cat $work_dir/bin/ddevice/base_build_id.txt)
 BRAND=$(cat $work_dir/bin/ddevice/brand.txt)
 echo -n "$token" | base64 -d > "$work_dir/rclone.conf"
 RCLONE_CONFIG_1DRIVE="$work_dir/rclone.conf"
-ONEDRIVE_REMOTE="starxONEDRIVE"
+ONEDRIVE_REMOTE="gdrive"
 
 if [[ $(git branch --show-current) == "beta" ]]; then
     VERSION="$(cat $work_dir/Version)"
