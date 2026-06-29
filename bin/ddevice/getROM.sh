@@ -86,9 +86,11 @@ if [ ! -f "${baserom}" ] && [[ "$baserom" == http* ]]; then
 
         # Extract file ID from Google Drive URL
         GDRIVE_ID=""
-        if [[ "$baserom" =~ /file/d/([a-zA-Z0-9_-]+) ]]; then
+        re_filed='/file/d/([a-zA-Z0-9_-]+)'
+        re_idparam='[?&]id=([a-zA-Z0-9_-]+)'
+        if [[ "$baserom" =~ $re_filed ]]; then
             GDRIVE_ID="${BASH_REMATCH[1]}"
-        elif [[ "$baserom" =~ [?&]id=([a-zA-Z0-9_-]+) ]]; then
+        elif [[ "$baserom" =~ $re_idparam ]]; then
             GDRIVE_ID="${BASH_REMATCH[1]}"
         fi
 
