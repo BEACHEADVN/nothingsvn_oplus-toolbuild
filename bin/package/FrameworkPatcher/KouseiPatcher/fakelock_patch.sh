@@ -4,6 +4,8 @@
 work_dir=$(pwd)
 magiskboot="$work_dir/bin/magiskboot"
 
+if [ -f $work_dir/build/baserom/images/vendor/etc/init/hw/init.qcom.rc ]; then
+
 if [ -f $work_dir/build/baserom/images/vendor_boot.img ]; then 
 
   echo "[IMGPATCH] - PATCHING vendor_boot.img"
@@ -36,5 +38,8 @@ if [ -f $work_dir/build/baserom/images/vendor_boot.img ]; then
     mv $work_dir/temp_boot/vendor_boot.img $work_dir/build/baserom/images
     rm -rf $work_dir/temp_boot
   fi
+fi
 
+else
+  echo "[MODS] - Not support patching to MTK devices..."
 fi

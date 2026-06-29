@@ -4,6 +4,7 @@ MAIN_FOLDER="$work_dir/build/baserom/images"
 repS="python3 $work_dir/bin/strRep.py"
 APKEDITOR="java -jar $work_dir/bin/apktool/apke.jar"
 repS="python3 $work_dir/bin/strRep.py"
+patchmethod="python3 $work_dir/bin/patchmethod_v2.py"
 region=$(cat $work_dir/bin/ddevice/rom_region.txt)
 brand_os=$(cat $work_dir/bin/ddevice/brand_os.txt)
 android=$(cat $work_dir/bin/ddevice/androidver.txt)

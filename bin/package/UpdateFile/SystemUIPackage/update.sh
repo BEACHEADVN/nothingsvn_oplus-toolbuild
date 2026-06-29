@@ -49,7 +49,13 @@ fi
 
 
 echo "[MODS] - Replace SystemUI From Global To Domestic ROM"
-if [[ $ROMVERSION == "16.0.7" && $ANDROID_VER == "16" && $region == "Domestic" ]]; then
+if [[ $ROMVERSION == "16.0.8" && $ANDROID_VER == "16" && $region == "Domestic" ]]; then
+SystemUI="$MAIN_FOLDER/system_ext/priv-app/SystemUI"
+Target="$work_dir/bin/package/UpdateFile/SystemUIPackage/1608"
+aria2c -q -d "$work_dir/bin/package/UpdateFile/SystemUIPackage/1608/" -o SystemUI.apk https://github.com/tiencv2006/nothingsvn_oplus-toolbuild/releases/download/oplus/SystemUI_1608.apk && echo "[INFO] - Get File Successfully"
+rm -rf $SystemUI/*
+cp -rf $Target/SystemUI.apk $SystemUI
+elif [[ $ROMVERSION == "16.0.7" && $ANDROID_VER == "16" && $region == "Domestic" ]]; then
 SystemUI="$MAIN_FOLDER/system_ext/priv-app/SystemUI"
 Target="$work_dir/bin/package/UpdateFile/SystemUIPackage/1607"
 rm -rf $SystemUI/*
