@@ -134,6 +134,14 @@ if [[ $model == "CPH2585" || $model == "CPH2609" ]]; then
   change_prop ro.vendor.oplus.market.name "OnePlus Ace 3"
 fi
 
+#Fix Camera And Signal Issues For OnePlus Ace 3
+if [[ $model == "CPH2767" || $model == "CPH2769" ]]; then 
+  echo "[MODS] - Fixing Camera and signal for OnePlus Ace 6T"
+  cp -rf $BLOB/ACE6T/A16/odm/* $IMG/odm
+  echo "[MODS] - Done"
+  change_prop ro.vendor.oplus.market.name "OnePlus Ace 6T"
+fi
+
 #No region check
 sed -i 's/^ro.vendor.oplus.radio.sar_regionmark=.*/ro.vendor.oplus.radio.sar_regionmark=/' $target
 
